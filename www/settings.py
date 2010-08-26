@@ -46,7 +46,7 @@ TIME_ZONE = 'Europe/Paris'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-fr'
 
 SITE_ID = 1
 
@@ -108,93 +108,11 @@ INSTALLED_APPS = (
 # specified in Django i18n location (all lowercase, with the language and
 # locale separated by a dash instead of an underscore: pt_BR -> pt-br)
 LANGUAGES = (("fr", u"Français"),
-             ("en", u"English"),
-             ("de", u"Deutsch"),
-             ("it", u"Italiano"),
-             ("ca", u"Català"),
-             ("ru", u"Русский"),
-             ("ar", u"العربية"),
-             ("pt-br", u"Português do Brasil"),
-             ("nb", u"Norwegian Bokmål"),
-             ("nl", u"Nederlands"),
-             ("hr-hr", u"Hrvatski"),
-             ("pl", u"Polski"),
-             ("es", u"Español"))
+             ("en", u"English"))
+         
 
-MAP_LANGUAGES = [("fr_BE.UTF-8", u"Royaume de Belgique (FR)"),
-                 ("fr_FR.UTF-8", u"France"),
-                 ("fr_CA.UTF-8", u"Canada (FR)"),
-                 ("fr_CH.UTF-8", u"Suisse (FR)"),
-                 ("fr_LU.UTF-8", u"Luxembourg (FR)"),
-                 ("en_AG",       u"Antigua and Barbuda (EN)"),
-                 ("en_AU.UTF-8", u"Australia (EN)"),
-                 ("en_BW.UTF-8", u"Botswana (EN)"),
-                 ("en_CA.UTF-8", u"Canada (EN)"),
-                 ("en_DK.UTF-8", u"Denmark (EN)"),
-                 ("en_GB.UTF-8", u"United Kingdom (EN)"),
-                 ("en_HK.UTF-8", u"Hong Kong (EN)"),
-                 ("en_IE.UTF-8", u"Ireland (EN)"),
-                 ("en_IN",       u"India (EN)"),
-                 ("en_NG",       u"Nigeria (EN)"),
-                 ("en_NZ.UTF-8", u"New Zealand (EN)"),
-                 ("en_PH.UTF-8", u"Philippines (EN)"),
-                 ("en_SG.UTF-8", u"Singapore (EN)"),
-                 ("en_US.UTF-8", u"United States (EN)"),
-                 ("en_ZA.UTF-8", u"South Africa (EN)"),
-                 ("en_ZW.UTF-8", u"Zimbabwe (EN)"),
-                 ("de_BE.UTF-8", u"Königreich Belgien (DE)"),
-                 ("it_CH.UTF-8", u"Svizzera (IT)"),
-                 ("it_IT.UTF-8", u"Italia (IT)"),
-                 ("nb_NO.UTF-8", u"Norwegian Bokmål (NO)"),
-                 ("nl_BE.UTF-8", u"Koninkrijk België (NL)"),
-                 ("nl_NL.UTF-8", u"Nederland (NL)"),
-                 ("de_AT.UTF-8", u"Österreich (DE)"),
-                 ("de_DE.UTF-8", u"Deutschland (DE)"),
-                 ("de_LU.UTF-8", u"Luxemburg (DE)"),
-                 ("de_CH.UTF-8", u"Schweiz (DE)"),
-                 ("ca_ES.UTF-8", u"Espanya (CA)"),
-                 ("ca_AD.UTF-8", u"Andorra (CA)"),
-                 ("ca_FR.UTF-8", u"França (CA)"),
-                 ("pt_BR.UTF-8", u"Brasil (PT)"),
-                 ("da_DK.UTF-8", u"Danmark (DA)"),
-                 ("hr_HR.UTF-8", u"Republika Hrvatska"),
-                 ("pl_PL.UTF-8", u"Rzeczpospolita Polska"),
-                 ("es_ES.UTF-8", u"España (ES)"),
-                 ("es_AR.UTF-8", u"Argentina (ES)"),
-                 ("es_BO.UTF-8", u"Bolivia (ES)"),
-                 ("es_CL.UTF-8", u"Chile (ES)"),
-                 ("es_CR.UTF-8", u"Costa Rica (ES)"),
-                 ("es_DO.UTF-8", u"República Dominicana (ES)"),
-                 ("es_EC.UTF-8", u"Ecuador (ES)"),
-                 ("es_SV.UTF-8", u"El Salvador (ES)"),
-                 ("es_GT.UTF-8", u"Guatemala (ES)"),
-                 ("es_HN.UTF-8", u"Honduras (ES)"),
-                 ("es_MX.UTF-8", u"México (ES)"),
-                 ("es_NI.UTF-8", u"Nicaragua (ES)"),
-                 ("es_PA.UTF-8", u"Panamá (ES)"),
-                 ("es_PY.UTF-8", u"Paraguay (ES)"),
-                 ("es_PE.UTF-8", u"Perú (ES)"),
-                 ("es_PR.UTF-8", u"Puerto Rico (ES)"),
-                 ("es_US.UTF-8", u"Estados Unidos de América (ES)"),
-                 ("es_UY.UTF-8", u"Uruguay (ES)"),
-                 ("es_VE.UTF-8", u"Venezuela (ES)"),
-                 ("ar_DZ.UTF-8", u"الجزائر (AR)"),
-                 ("ar_BH.UTF-8", u"البحرين (AR)"),
-                 ("ar_EG.UTF-8", u"مصر (AR)"),
-                 ("ar_IQ.UTF-8", u"العراق (AR)"),
-                 ("ar_JO.UTF-8", u"الأردنّ‎ (AR)"),
-                 ("ar_KW.UTF-8", u"الكويت (AR)"),
-                 ("ar_LB.UTF-8", u"لبنان (AR)"),
-                 ("ar_LY.UTF-8", u"ليبيا (AR)"),
-                 ("ar_MA.UTF-8", u"المملكة المغربية (AR)"),
-                 ("ar_OM.UTF-8", u"سلطنة عمان (AR)"),
-                 ("ar_QA.UTF-8", u"دولة قطر (AR)"),
-                 ("ar_SA.UTF-8", u"المملكة العربية السعودية (AR)"),
-                 ("ar_SD.UTF-8", u"السودان (AR)"),
-                 ("ar_SY.UTF-8", u"سوريا (AR)"),
-                 ("ar_TN.UTF-8", u"تونس (AR)"),
-                 ("ar_AE.UTF-8", u"دولة الإمارات العربية المتحدة (AR)"),
-                 ("ar_YE.UTF-8", u"اليَمَن (AR)")]
+MAP_LANGUAGES = [("fr_FR.UTF-8", u"France"),
+                 ("en_US.UTF-8", u"United States (EN)")]
 
 MAP_LANGUAGES.sort(lambda x, y: cmp(x[1], y[1]))
 # "C" must be the last entry

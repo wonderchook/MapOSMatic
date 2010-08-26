@@ -68,7 +68,6 @@
         <li {% block menu-new  %}{% endblock %}><a href="{% url new  %}">{% trans "Create map" %}</a></li>
         <li {% block menu-jobs %}{% endblock %}><a href="{% url jobs %}">{% trans "Jobs" %}</a></li>
         <li {% block menu-maps %}{% endblock %}><a href="{% url maps %}">{% trans "Maps" %}</a></li>
-        <li><a href="http://news.maposmatic.org">{% trans "News" %}</a></li>
         <li {% block menu-about %}{% endblock %}><a href="{% url about %}">{% trans "About" %}</a></li>
       </ul>
     </div>
@@ -83,60 +82,6 @@
       <td id="content">
         {% block page %}{% endblock %}
       </td>
-
-      <td id="meta">
-        <div id="bmap">
-          <h3>{% trans "Random map" %}</h3>
-          {% if randommap %}<p class="randommap">
-            <a href="{% url job-by-id randommap.id %}">
-              <img src="{{ randommap.get_thumbnail }}" /><br />
-              <i>{{ randommap.maptitle }}</i>
-            </a>
-          </p>
-          {% else %}<p>{% trans "No random map found." %}</p>
-          {% endif %}
-        </div>
-
-        <div id="bnews">
-          <h3>{% trans "Latest news" %}</h3>
-          <ul>
-            {% for entry in blogposts %}<li>
-              <a href="{{ entry.link }}">{{ entry.title }}</a><br />
-              <span class="newsinfo">
-                {% blocktrans with entry.updated_parsed|feedparsed|timesince as date %}published {{ date }} ago{% endblocktrans %}
-              </span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div id="bcontact">
-          <h3>{% trans "Contact" %}</h3>
-          <p>
-            {% trans "Mail:" %}
-            <a href="mailto:contact@maposmatic.org">contact@maposmatic.org</a><br />
-            {% trans "IRC:" %}
-            <tt>#maposmatic</tt> {% trans "on" %} <tt>irc.freenode.net</tt>
-          </p>
-        </div>
-      </td>
     </tr></tbody></table>
-
-    <!-- Piwik statistics -->
-    <script type="text/javascript">
-      var pkBaseURL = (("https:" == document.location.protocol) ? "https://stats.maposmatic.org/piwik/" : "http://stats.maposmatic.org/piwik/");
-      document.write(unescape("%3Cscript src='" + pkBaseURL
-            + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-    </script><script type="text/javascript">
-      try {
-        var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-        piwikTracker.trackPageView();
-        piwikTracker.enableLinkTracking();
-      } catch (err) {}
-    </script>
-    <noscript>
-      <img src="http://stats.maposmatic.org/piwik/piwik.php?idsite=2" />
-    </noscript>
-    <!-- End Piwik Tag -->
   </body>
 </html>

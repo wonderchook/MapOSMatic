@@ -53,7 +53,6 @@ function getAreaBottomRightLon() { return document.getElementById('area_lon_bott
 function updateFormBbox(bounds)
 {
     bounds = bounds.transform(epsg_projection, epsg_display_projection);
-
     getUpperLeftLat().value = bounds.top.toFixed(4);
     getUpperLeftLon().value = bounds.left.toFixed(4);
     getBottomRightLat().value = bounds.bottom.toFixed(4);
@@ -91,7 +90,7 @@ function updateMap(vectorLayer)
         bbox_bounds.transform(epsg_display_projection, epsg_projection);
         var feature = new OpenLayers.Feature.Vector(
             bbox_bounds.toGeometry(), {}, bbox_style);
-        vectorLayer.addFeatures(feature);
+       // vectorLayer.addFeatures(feature);
         closest = true
     }
     else
@@ -122,6 +121,11 @@ function updateFormArea()
     getAreaUpperLeftLon().value = bounds.left.toFixed(4);
     getAreaBottomRightLat().value = bounds.bottom.toFixed(4);
     getAreaBottomRightLon().value = bounds.right.toFixed(4);
+      getUpperLeftLat().value = bounds.top.toFixed(4);
+    getUpperLeftLon().value = bounds.left.toFixed(4);
+    getBottomRightLat().value = bounds.bottom.toFixed(4);
+    getBottomRightLon().value = bounds.right.toFixed(4);
+
 }
 
 /* Main initialisation function. Must be called before the map is manipulated. */
@@ -143,7 +147,7 @@ function mapInit()
 
     var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
     map.addLayer(vectorLayer);
-
+	
     var selectControl = new OpenLayers.Control();
     OpenLayers.Util.extend(selectControl, {
         draw: function() {
@@ -162,15 +166,14 @@ function mapInit()
             bounds = new OpenLayers.Bounds();
             bounds.extend(ltpixel);
             bounds.extend(rbpixel);
-            var feature = new OpenLayers.Feature.Vector(
-                bounds.toGeometry(), {}, bbox_style);
-            vectorLayer.destroyFeatures()
-            vectorLayer.addFeatures(feature);
+           // var feature = new OpenLayers.Feature.Vector(
+           //     bounds.toGeometry(), {}, bbox_style);
+           // vectorLayer.destroyFeatures()
+          //  vectorLayer.addFeatures(feature);
             updateFormBbox(bounds);
         }
     });
     map.addControl(selectControl);
-
     map.events.register('zoomend', map, updateFormArea);
     map.events.register('moveend', map, updateFormArea);
     updateMap(vectorLayer);

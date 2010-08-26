@@ -27,9 +27,9 @@ from django.utils.translation import ugettext_lazy as _
 
 from www import settings
 
-URL_OSM_CSS = ["http://www.openlayers.org/api/theme/default/style.css"]
-URL_OSM_JS = ["http://www.openlayers.org/api/OpenLayers.js",
-          "http://www.openstreetmap.org/openlayers/OpenStreetMap.js"]
+URL_OSM_CSS = ["/smedia/olstyle.css"]
+URL_OSM_JS = ["/smedia/OpenLayers.js",
+          "/smedia/OpenStreetMap.js"]
 
 class AreaWidget(forms.TextInput):
     """

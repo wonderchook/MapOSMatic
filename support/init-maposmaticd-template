@@ -19,7 +19,7 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin
 DESC="MapOSMatic rendering daemon"
 NAME=maposmaticd
 
-BASE_PATH="/path/to/your/maposmatic/"
+BASE_PATH="/home/maps/maposmatic/"
 WRAPPER="scripts/wrapper.py"
 DAEMON="scripts/daemon.py"
 
